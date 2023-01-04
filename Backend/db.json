@@ -1,0 +1,19 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Caneta Bic",
+            "Price": 5.99
+        },
+        {
+            "id": 1,
+            "name": "Notebook Lenovo",
+            "Price": 2100.00
+        },
+        {
+            "id": 1,
+            "name": "Samsumg A02",
+            "Price": 1000.00
+        }
+    ]
+}
