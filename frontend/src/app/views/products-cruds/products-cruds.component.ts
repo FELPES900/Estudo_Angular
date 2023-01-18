@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from "@angular/router"
 
 @Component({
   selector: 'app-products-cruds',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./products-cruds.component.css']
 })
 export class ProductsCrudsComponent {
+
+  constructor(private router: Router) { }
+
+  navigateToProductCreate(): void {
+    this.router.navigate(['products/create'])
+  }
 
 }

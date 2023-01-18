@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 // Importando as views de Home e Products
 import { HomeComponent } from "./views/home/home.component"
 import { ProductsCrudsComponent } from "./views/products-cruds/products-cruds.component"
+import { ProductCreateComponent } from './components/product/product-create/product-create.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: "products",
     component: ProductsCrudsComponent
+  },
+  {
+    path: "products/create",
+    component: ProductCreateComponent
   }
 ];
 

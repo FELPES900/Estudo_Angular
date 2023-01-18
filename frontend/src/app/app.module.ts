@@ -15,7 +15,10 @@ import { MatCardModule } from "@angular/material/card";
 import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './views/home/home.component';
 import { ProductsCrudsComponent } from './views/products-cruds/products-cruds.component';
-import { RedDirective } from './directives/red.directive';
+import { ProductCreateComponent } from './components/product/product-create/product-create.component';
+import { MatButtonModule } from "@angular/material/button";
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -25,7 +28,7 @@ import { RedDirective } from './directives/red.directive';
     NavComponent,
     HomeComponent,
     ProductsCrudsComponent,
-    RedDirective
+    ProductCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,10 @@ import { RedDirective } from './directives/red.directive';
     MatToolbarModule,
     MatSidenavModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
