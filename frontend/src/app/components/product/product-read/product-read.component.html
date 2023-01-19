@@ -1,5 +1,24 @@
-<!-- <table>
-    <tr ng-repeat="let product as products">
-        <td>{{ product['B1_COD'] }}</td>
-    </tr>
-</table> -->
+<div>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>Descrição</th>
+                <th>Tipo</th>
+                <th>Unidade</th>
+                <th>Loja</th>
+                <th>Garantia</th>
+              </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products" class="active-row">
+                <td>{{product.B1_COD }}</td>
+                <td>{{product.B1_DESC}}</td>
+                <td>{{product.B1_TIPO}}</td>
+                <td>{{product.B1_UM}}</td>
+                <td>{{product.B1_LOCPAD}}</td>
+                <td>{{product.B1_GARANT}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

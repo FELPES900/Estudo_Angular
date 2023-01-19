@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient } from "@angular/common/http";
-import { Product } from './product.model';
+import { Product, ProductContainer } from './product.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -27,8 +27,8 @@ export class ProductService {
   }
 
   // Method para ler as informações do Backend
-  read(): Observable<Product[]> {
+  read(): Observable<ProductContainer> {
     // Ira retorna a lista de produtos
-    return this.http.get<Product[]>(this.baseUrl)
+    return this.http.get<ProductContainer>(this.baseUrl)
   }
 }

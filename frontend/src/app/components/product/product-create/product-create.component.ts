@@ -11,8 +11,12 @@ import { Product } from '../product.model';
 export class ProductCreateComponent {
 
   Product: Product = {
-    name: "",
-    price: null
+    B1_COD: "",
+    B1_DESC: "",
+    B1_TIPO: "",
+    B1_UM: "",
+    B1_LOCPAD: "",
+    B1_GARANT: ""
   }
 
   constructor(private ProductService: ProductService, private router: Router) { }
@@ -21,7 +25,7 @@ export class ProductCreateComponent {
   create(): void {
     // Apos ter apertado em salva ai sim apresentara a messagem
     this.ProductService.create(this.Product).subscribe(() => {
-      this.ProductService.showMenssagem("Produto criando com sucesso")
+      this.ProductService.showMenssagem("Produto criado com sucesso")
       this.router.navigate(['/products'])
     })
   }
