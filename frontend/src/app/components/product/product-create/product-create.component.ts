@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ProductsService } from './../products.service';
+import { ProductService } from './../products.service';
 import { Router } from '@angular/router';
 import { Product } from '../product.model';
 
@@ -10,18 +10,18 @@ import { Product } from '../product.model';
 })
 export class ProductCreateComponent {
 
-  product: Product = {
-    name: "Produto de teste",
-    price: 149.99
+  Product: Product = {
+    name: "",
+    price: null
   }
 
-  constructor(private ProductsService: ProductsService, private router: Router) { }
-  
+  constructor(private ProductService: ProductService, private router: Router) { }
+
   // Method de resposta após o produto ser criado
-  createProduct(): void {
+  create(): void {
     // Apos ter apertado em salva ai sim apresentara a messagem
-    this.ProductsService.create(this.product).subscribe(() => {
-      this.ProductsService.showMenssagem("Produto criando com sucesso")
+    this.ProductService.create(this.Product).subscribe(() => {
+      this.ProductService.showMenssagem("Produto criando com sucesso")
       this.router.navigate(['/products'])
     })
   }
@@ -29,6 +29,7 @@ export class ProductCreateComponent {
   // Cancela a criação do produto quando estiver na tela de criação
   cancel(): void {
     this.router.navigate(['/products'])
+    this.ProductService.showMenssagem("Requisição cancelada")
   }
 
 }

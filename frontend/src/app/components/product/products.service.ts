@@ -7,9 +7,9 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductsService {
+export class ProductService {
 
-  baseUrl = "http://localhost:4200/products"
+  baseUrl = "http://localhost:8081/rest/faturamento/cliente/tipo/visualizar"
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
@@ -24,5 +24,11 @@ export class ProductsService {
   // Faz a criação dos produtos
   create(product: Product): Observable<Product> {
     return this.http.post<Product>(this.baseUrl, product)
+  }
+
+  // Method para ler as informações do Backend
+  read(): Observable<Product[]> {
+    // Ira retorna a lista de produtos
+    return this.http.get<Product[]>(this.baseUrl)
   }
 }
