@@ -1,13 +1,27 @@
 <mat-card>
     <mat-card-title>Novo Produto</mat-card-title>
-    <form>
-        <mat-form-field>
-            <input matInput placeholder="Nome" [(ngModel)]="Product.B1_COD" name="B1_COD">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Preço (R$)" [(ngModel)]="Product.B1_DESC" name="B1_DESC">
-        </mat-form-field>
-    </form>
+    <div>
+        <form>
+            <mat-form-field>
+                <input matInput placeholder="Nome" [(ngModel)]="Product.B1_COD" name="B1_COD">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Preço (R$)" [(ngModel)]="Product.B1_DESC" name="B1_DESC">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Tipo" [(ngModel)]="Product.B1_TIPO" name="B1_TIPO">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Unidade de Medida" [(ngModel)]="Product.B1_UM" name="B1_UM">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Armazem Pad." [(ngModel)]="Product.B1_LOCPAD" name="B1_LOCPAD">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Garantia" [(ngModel)]="Product.B1_GARANT" name="B1_GARANT">
+            </mat-form-field>
+        </form>
+    </div>
     <div>
         <button mat-raised-button (click)="create()" color="primary">
             Salvar

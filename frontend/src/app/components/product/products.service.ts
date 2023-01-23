@@ -9,7 +9,8 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
 
-  baseUrl = "http://localhost:8081/rest/faturamento/cliente/tipo/visualizar"
+  baseUrlGet = "http://localhost:8081/rest/faturamento/cliente/tipo/visualizar";
+  baseUrlPost = "http://localhost:8081/rest/faturamneto/produtos/create"
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
@@ -23,12 +24,14 @@ export class ProductService {
 
   // Faz a criação dos produtos
   create(product: Product): Observable<Product> {
-    return this.http.post<Product>(this.baseUrl, product)
+    type NewType = Product;
+
+    return this.http.post<NewType>(this.baseUrlPost, product)
   }
 
   // Method para ler as informações do Backend
   read(): Observable<ProductContainer> {
     // Ira retorna a lista de produtos
-    return this.http.get<ProductContainer>(this.baseUrl)
+    return this.http.get<ProductContainer>(this.baseUrlGet)
   }
 }
