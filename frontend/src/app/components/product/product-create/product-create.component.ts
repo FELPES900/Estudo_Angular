@@ -23,11 +23,11 @@ export class ProductCreateComponent {
 
   // Method de resposta após o produto ser criado
   create(): void {
-    // Apos ter apertado em salva ai sim apresentara a messagem
-    this.ProductService.create(this.Product).subscribe(() => {
-      this.ProductService.showMenssagem("Produto criado com sucesso")
-      this.router.navigate(['/products'])
-    })
+    console.log(this.Product)
+    // this.ProductService.create(this.Product).subscribe(() => {
+    //   this.ProductService.showMenssagem("Produto criado com sucesso")
+    //   this.router.navigate(['/products'])
+    // })
   }
 
   // Cancela a criação do produto quando estiver na tela de criação
