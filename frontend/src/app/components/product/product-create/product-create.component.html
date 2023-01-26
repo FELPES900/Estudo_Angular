@@ -1,18 +1,118 @@
-<div>
-    <div class="row">
-        <input class="form-control col-6" placeholder="Nome" [(ngModel)]="Product.B1_COD" type="text" name="B1_COD">
-        <input class="form-control col-6" placeholder="Preço (R$)" [(ngModel)]="Product.B1_DESC" type="text" name="B1_DESC">
-    </div>
-    <input matInput placeholder="Tipo" [(ngModel)]="Product.B1_TIPO" name="B1_TIPO">
-    <input matInput placeholder="Unidade de Medida" [(ngModel)]="Product.B1_UM" type="text" name="B1_UM">
-    <input matInput placeholder="Armazem Pad." [(ngModel)]="Product.B1_LOCPAD" name="B1_LOCPAD">
-    <input matInput placeholder="Garantia" [(ngModel)]="Product.B1_GARANT" name="B1_GARANT">
-</div>
-<div>
-    <button mat-raised-button (click)="create()" color="primary">
-        Salvar
-    </button>
-    <button mat-raised-button (click)="cancel()">
-        Cancelar
-    </button>
-</div>
+<mat-tab-group>
+    <mat-tab label="First">
+        <mat-card>
+            <mat-card-title>Novo Produto</mat-card-title>
+            <br>
+            <div>
+                <form>
+                    <div class="campos">
+                        <mat-form-field hintLabel="Max 150 characters" appearance="outline" class="codigo">
+                            <input matInput #input maxlength="150" placeholder="Nome" [(ngModel)]="Product.B1_COD"
+                                name="B1_COD">
+                        </mat-form-field>
+                        <mat-form-field hintLabel="Max R$ 999.999.99" appearance="outline" class="preco">
+                            <input matInput placeholder="Preço (R$)" type="number" [(ngModel)]="Product.B1_DESC"
+                                name="B1_DESC">
+                        </mat-form-field>
+                    </div>
+                    <br>
+                    <div class="campos">
+                        <mat-form-field hintLabel="Tipo" appearance="outline" class="Tipo">
+                            <mat-label>Select</mat-label>
+                            <mat-select [(value)]="Product.B1_TIPO">
+                                <mat-option value="AI">ATIVO IMOBILIZADO</mat-option>
+                                <mat-option value="BN">BENEFICIAMENTO</mat-option>
+                                <mat-option value="EM">EMBALAGEM</mat-option>
+                                <mat-option value="GE">GARANTIA ESTENDIDA</mat-option>
+                                <mat-option value="GG">GASTOS GERAIS</mat-option>
+                                <mat-option value="GN">GENERICO</mat-option>
+                                <mat-option value="IA">INSUMO AGRICOLA</mat-option>
+                                <mat-option value="II">INSUMO INDUSTRIAIS</mat-option>
+                                <mat-option value="IN">PRODUTOS INDUSTRIAIS</mat-option>
+                                <mat-option value="KT">KIT</mat-option>
+                                <mat-option value="MC">MATERIAL DE CONSUMO</mat-option>
+                                <mat-option value="ME">MERCADORIA</mat-option>
+                                <mat-option value="MM">MATERIAIS MANFRO</mat-option>
+                                <mat-option value="MO">MAO DE OBRA</mat-option>
+                                <mat-option value="MP">MATERIA PRIMA</mat-option>
+                                <mat-option value="OI">OUTROS INSUMOS</mat-option>
+                                <mat-option value="PA">PRODUTO ACABADO</mat-option>
+                                <mat-option value="PI">PRODUTO INTERMEDIARIO</mat-option>
+                                <mat-option value="PP">PRODUTO EM PROCESSO</mat-option>
+                                <mat-option value="PV">PRODUTO VEICULO</mat-option>
+                                <mat-option value="SL">SELO DE CONTROLE</mat-option>
+                                <mat-option value="SM">SEMENTES</mat-option>
+                                <mat-option value="SP">SUBPRODUTO</mat-option>
+                                <mat-option value="SV">SERVIÇO</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field hintLabel="Unidade Medida" appearance="outline" class="Unidade">
+                            <mat-label>Select</mat-label>
+                            <mat-select [(value)]="Product.B1_UM">
+                                <mat-option value="AR">ARROBA</mat-option>
+                                <mat-option value="BD">BALDE</mat-option>
+                                <mat-option value="CC">CENTIMET</mat-option>
+                                <mat-option value="CM">CENTIMET</mat-option>
+                                <mat-option value="CT">CENTO</mat-option>
+                                <mat-option value="CX">CAIXA</mat-option>
+                                <mat-option value="DM">DECIMETR</mat-option>
+                                <mat-option value="DZ">DUZIA</mat-option>
+                                <mat-option value="FL">FOLHAS</mat-option>
+                                <mat-option value="FT">PES</mat-option>
+                                <mat-option value="G">GRAMA</mat-option>
+                                <mat-option value="GL">GALAO</mat-option>
+                                <mat-option value="GZ">GROZA</mat-option>
+                                <mat-option value="HR">HORA</mat-option>
+                                <mat-option value="JG">JOGO</mat-option>
+                                <mat-option value="KG">QUILOGRA</mat-option>
+                                <mat-option value="KT">KIT</mat-option>
+                                <mat-option value="L">LITRO</mat-option>
+                                <mat-option value="LB">LIBRA</mat-option>
+                                <mat-option value="LT">LATA</mat-option>
+                                <mat-option value="M2">METRO QU</mat-option>
+                                <mat-option value="M3">METRO CU</mat-option>
+                                <mat-option value="ML">MILILITR</mat-option>
+                                <mat-option value="MM">MILIMETR</mat-option>
+                                <mat-option value="MT">METRO</mat-option>
+                                <mat-option value="OZ">ONCA</mat-option>
+                                <mat-option value="P">PAR</mat-option>
+                                <mat-option value="PC">PECA</mat-option>
+                                <mat-option value="PL">POLEGADA</mat-option>
+                                <mat-option value="TL">TONELADA</mat-option>
+                                <mat-option value="UN">UNIDADE</mat-option>
+                                <mat-option value="YD">JARDA</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field hintLabel="Armazem Padrao p/Requis" appearance="outline" class="Armazen">
+                            <mat-label>Select</mat-label>
+                            <mat-select [(value)]="Product.B1_LOCPAD">
+                                <mat-option value="01">ESTOQUE MAXIMO</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field hintLabel="Garnatia" appearance="outline" class="Garantia">
+                            <mat-label>Select</mat-label>
+                            <mat-select [(value)]="Product.B1_GARANT">
+                                <mat-option value="S">SIM</mat-option>
+                                <mat-option value="N">NÃO</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <button mat-raised-button (click)="create()" color="primary">
+                    Salvar
+                </button>
+                <button mat-raised-button (click)="cancel()">
+                    Cancelar
+                </button>
+            </div>
+        </mat-card>
+    </mat-tab>
+    <mat-tab label="Second">
+
+    </mat-tab>
+    <mat-tab label="Third">
+
+    </mat-tab>
+</mat-tab-group>
