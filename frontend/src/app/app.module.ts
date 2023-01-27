@@ -24,7 +24,8 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { ProductReadComponent } from './components/product/product-read/product-read.component';
 import { MatSelectModule } from "@angular/material/select";
-import { MatTabsModule } from '@angular/material/tabs'; 
+import { MatTabsModule } from '@angular/material/tabs';
+import { ProdutosEditComponent } from './components/product/produtos-edit/produtos-edit.component'; 
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     ProductsCrudsComponent,
     ProductCreateComponent,
     ProductReadComponent,
+    ProdutosEditComponent,
   ],
   imports: [
     BrowserModule,

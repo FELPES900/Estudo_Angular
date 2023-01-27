@@ -6,12 +6,12 @@
             <div>
                 <form>
                     <div class="campos">
-                        <mat-form-field hintLabel="Max 15 characters" appearance="outline" class="codigo">
+                        <mat-form-field hintLabel="Max 15 characters // *Codigo" appearance="outline" class="codigo">
                             <input matInput #input maxlength="15" placeholder="Codigo" [(ngModel)]="product.B1_COD"
                                 name="B1_COD">
                         </mat-form-field>
-                        <mat-form-field hintLabel="Max 255 characters" appearance="outline" class="descricao">
-                            <input matInput placeholder="Descrição" type="text" [(ngModel)]="product.B1_DESC"
+                        <mat-form-field hintLabel="Max 30 characters" appearance="outline" class="descricao">
+                            <input matInput maxlength="30" placeholder="Descrição" type="text" [(ngModel)]="product.B1_DESC"
                                 name="B1_DESC">
                         </mat-form-field>
                     </div>
@@ -92,8 +92,8 @@
                         <mat-form-field hintLabel="Garnatia" appearance="outline" class="Garantia">
                             <mat-label>Select</mat-label>
                             <mat-select [(value)]="product.B1_GARANT">
-                                <mat-option value="S">SIM</mat-option>
-                                <mat-option value="N">NÃO</mat-option>
+                                <mat-option value="1">SIM</mat-option>
+                                <mat-option value="2">NÃO</mat-option>
                             </mat-select>
                         </mat-form-field>
                     </div>

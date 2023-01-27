@@ -23,14 +23,16 @@ export class ProductCreateComponent {
 
   // Method de resposta após o produto ser criado
   create(): void {
-    console.log(this.product.B1_COD)
-    if (this.product.B1_COD == "") {
-      console.log("por favor preencha o campo codigo")
+    if (this.product.B1_COD == "" || this.product.B1_DESC  == "" || this.product.B1_GARANT == "" || this.product.B1_LOCPAD == "" || this.product.B1_TIPO == "" || this.product.B1_UM == "" ) {
+      // console.log("por favor preencha o campo codigo")
+      this.ProductService.showMenssagem("Por favor preencha todos os campos obrigatorios")
+    } else {
+      // this.ProductService.showMenssagem("Tudpo OK")
+      this.ProductService.create(this.product).subscribe(() => {
+        this.ProductService.showMenssagem("Produto criado com sucesso")
+        this.router.navigate(['/products'])
+      })
     }
-    // this.ProductService.create(this.Product).subscribe(() => {
-    //   this.ProductService.showMenssagem("Produto criado com sucesso")
-    //   this.router.navigate(['/products'])
-    // })
   }
 
   // Cancela a criação do produto quando estiver na tela de criação
