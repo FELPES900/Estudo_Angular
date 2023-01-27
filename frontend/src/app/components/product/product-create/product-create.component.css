@@ -14,23 +14,25 @@ button {
     margin-right: 15px;
 }
 /* A tela de onde fica os campos so vai ate 95% */
- .codigo{
-    width: 60%;
+.codigo{
+    width: 28.5%;
+    text-transform: uppercase;
 }
- .preco{
-    width: 35%;
+ .descricao{
+    width: 70%;
+    text-transform: uppercase;
 }
 
 .Tipo {
-    width: 23.75%;
+    width: 24.2%;
 }
 .Unidade{
-    width: 23.75%;
+    width: 24.2%;
 }
 .Armazen{
-    width: 23.75%;
+    width: 24.2%;
 }
 
 .Garantia{
-    width: 23.75%;
+    width: 24.2%;
 }

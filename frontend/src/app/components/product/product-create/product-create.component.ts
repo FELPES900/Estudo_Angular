@@ -10,7 +10,7 @@ import { Product } from '../product.model';
 })
 export class ProductCreateComponent {
 
-  Product: Product = {
+  product: Product = {
     B1_COD: "",
     B1_DESC: "",
     B1_TIPO: "",
@@ -23,7 +23,10 @@ export class ProductCreateComponent {
 
   // Method de resposta após o produto ser criado
   create(): void {
-    console.log(this.Product)
+    console.log(this.product.B1_COD)
+    if (this.product.B1_COD == "") {
+      console.log("por favor preencha o campo codigo")
+    }
     // this.ProductService.create(this.Product).subscribe(() => {
     //   this.ProductService.showMenssagem("Produto criado com sucesso")
     //   this.router.navigate(['/products'])
@@ -36,4 +39,4 @@ export class ProductCreateComponent {
     this.ProductService.showMenssagem("Requisição cancelada")
   }
 
-}
+} 

@@ -6,12 +6,12 @@
             <div>
                 <form>
                     <div class="campos">
-                        <mat-form-field hintLabel="Max 150 characters" appearance="outline" class="codigo">
-                            <input matInput #input maxlength="150" placeholder="Nome" [(ngModel)]="Product.B1_COD"
+                        <mat-form-field hintLabel="Max 15 characters" appearance="outline" class="codigo">
+                            <input matInput #input maxlength="15" placeholder="Codigo" [(ngModel)]="product.B1_COD"
                                 name="B1_COD">
                         </mat-form-field>
-                        <mat-form-field hintLabel="Max R$ 999.999.99" appearance="outline" class="preco">
-                            <input matInput placeholder="Preço (R$)" type="number" [(ngModel)]="Product.B1_DESC"
+                        <mat-form-field hintLabel="Max 255 characters" appearance="outline" class="descricao">
+                            <input matInput placeholder="Descrição" type="text" [(ngModel)]="product.B1_DESC"
                                 name="B1_DESC">
                         </mat-form-field>
                     </div>
@@ -19,7 +19,7 @@
                     <div class="campos">
                         <mat-form-field hintLabel="Tipo" appearance="outline" class="Tipo">
                             <mat-label>Select</mat-label>
-                            <mat-select [(value)]="Product.B1_TIPO">
+                            <mat-select [(value)]="product.B1_TIPO">
                                 <mat-option value="AI">ATIVO IMOBILIZADO</mat-option>
                                 <mat-option value="BN">BENEFICIAMENTO</mat-option>
                                 <mat-option value="EM">EMBALAGEM</mat-option>
@@ -48,7 +48,7 @@
                         </mat-form-field>
                         <mat-form-field hintLabel="Unidade Medida" appearance="outline" class="Unidade">
                             <mat-label>Select</mat-label>
-                            <mat-select [(value)]="Product.B1_UM">
+                            <mat-select [(value)]="product.B1_UM">
                                 <mat-option value="AR">ARROBA</mat-option>
                                 <mat-option value="BD">BALDE</mat-option>
                                 <mat-option value="CC">CENTIMET</mat-option>
@@ -85,13 +85,13 @@
                         </mat-form-field>
                         <mat-form-field hintLabel="Armazem Padrao p/Requis" appearance="outline" class="Armazen">
                             <mat-label>Select</mat-label>
-                            <mat-select [(value)]="Product.B1_LOCPAD">
+                            <mat-select [(value)]="product.B1_LOCPAD">
                                 <mat-option value="01">ESTOQUE MAXIMO</mat-option>
                             </mat-select>
                         </mat-form-field>
                         <mat-form-field hintLabel="Garnatia" appearance="outline" class="Garantia">
                             <mat-label>Select</mat-label>
-                            <mat-select [(value)]="Product.B1_GARANT">
+                            <mat-select [(value)]="product.B1_GARANT">
                                 <mat-option value="S">SIM</mat-option>
                                 <mat-option value="N">NÃO</mat-option>
                             </mat-select>
@@ -109,10 +109,11 @@
             </div>
         </mat-card>
     </mat-tab>
-    <mat-tab label="Second">
+    <!-- Algo que será adcionado futuramente -->
+    <!-- <mat-tab label="Second">
 
     </mat-tab>
     <mat-tab label="Third">
 
-    </mat-tab>
+    </mat-tab> -->
 </mat-tab-group>
