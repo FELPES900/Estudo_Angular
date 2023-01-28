@@ -25,7 +25,9 @@ import { MatInputModule } from "@angular/material/input";
 import { ProductReadComponent } from './components/product/product-read/product-read.component';
 import { MatSelectModule } from "@angular/material/select";
 import { MatTabsModule } from '@angular/material/tabs';
-import { ProdutosEditComponent } from './components/product/produtos-edit/produtos-edit.component'; 
+import { ProdutosEditComponent } from './components/product/produtos-edit/produtos-edit.component';
+import {MatIconModule} from '@angular/material/icon';
+import { ProdutosViewComponent } from './components/product/produtos-view/produtos-view.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { ProdutosEditComponent } from './components/product/produtos-edit/produt
     ProductCreateComponent,
     ProductReadComponent,
     ProdutosEditComponent,
+    ProdutosViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,8 @@ import { ProdutosEditComponent } from './components/product/produtos-edit/produt
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatTabsModule
+    MatTabsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

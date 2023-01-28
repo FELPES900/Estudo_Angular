@@ -21,7 +21,11 @@ const routes: Routes = [
     component: ProductCreateComponent
   },
   {
-    path: "products/edit",
+    path: "products/edit/:B1_COD",
+    component: ProdutosEditComponent
+  },
+  {
+    path: "products/visualizar/:B1_COD",
     component: ProdutosEditComponent
   }
 ];

@@ -8,7 +8,7 @@
                 <th>Unidade</th>
                 <th>Loja</th>
                 <th>Garantia</th>
-              </tr>
+            </tr>
         </thead>
         <tbody>
             <tr *ngFor="let product of products" class="active-row">
@@ -18,6 +18,21 @@
                 <td>{{product.B1_UM}}</td>
                 <td>{{product.B1_LOCPAD}}</td>
                 <td>{{product.B1_GARANT}}</td>
+                                <td>
+                    <button routerLink="visualizar/{{product.B1_COD}}" mat-mini-fab class="olho" aria-label="Example icon button with a delete icon">
+                        <mat-icon>visibility</mat-icon>
+                    </button>
+                </td>
+                <td>
+                    <button routerLink="edit/{{product.B1_COD}}" mat-mini-fab color="primary" aria-label="Example icon button with a delete icon">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </td>
+                <td>
+                    <button mat-mini-fab color="warn" aria-label="Example icon button with a delete icon">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
             </tr>
         </tbody>
     </table>
