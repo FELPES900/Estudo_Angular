@@ -11,7 +11,7 @@ export class ProductService {
 
   baseUrlGet = "http://localhost:8081/rest/faturamento/cliente/tipo/visualizar";
   baseUrlPost = "http://localhost:8081/rest/faturamneto/produtos/create";
-  baseUrlPathc = "http://localhost:8081/rest/faturamneto/produtos/edit/"
+  baseUrlPathc = "http://localhost:8081/rest/faturamneto/produtos/edit"
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
@@ -30,14 +30,15 @@ export class ProductService {
     return this.http.post<NewType>(this.baseUrlPost, product)
   }
 
+  update(product: Product): Observable<Product> {
+    type NewType = Product;
+
+    return this.http.patch<NewType>(this.baseUrlPathc, product)
+  }
+
   // Method para ler as informações do Backend
   read(): Observable<ProductContainer> {
     // Ira retorna a lista de produtos
     return this.http.get<ProductContainer>(this.baseUrlGet)
   }
-
-  // readById(B1_COD: string | null): Observable<ProductContainer>{
-  //   const url = 
-  //   return this.http.get<ProductContainer>(this.baseUrlGet)
-  // }
 }

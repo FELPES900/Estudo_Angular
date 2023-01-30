@@ -33,6 +33,14 @@ export class ProdutosEditComponent {
   }
 
   update(): void {
+    if(this.product.B1_DESC  == "" || this.product.B1_GARANT == "" || this.product.B1_LOCPAD == "" || this.product.B1_TIPO == "" || this.product.B1_UM == ""){
+      this.ProductService.showMenssagem("Os campos que sao editavel nao podem estar vazio")
+    }else{
+      this.ProductService.update(this.product).subscribe(() => {
+        this.ProductService.showMenssagem("Produto criado com sucesso")
+        this.router.navigate(['/products'])
+      })
+    }
     console.log(this.product)
   }
 
