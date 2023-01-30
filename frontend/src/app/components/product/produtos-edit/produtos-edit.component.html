@@ -7,20 +7,20 @@
                 <form>
                     <div class="campos">
                         <mat-form-field hintLabel="Max 15 characters // *Codigo" appearance="outline" class="codigo">
-                            <!-- <input matInput #input maxlength="15" placeholder="Codigo" [(ngModel)]="product.B1_COD" name="B1_COD"> -->
-                            <input matInput #input maxlength="15" placeholder="Codigo" name="B1_COD">
+                            <input matInput #input maxlength="15" class="borda" placeholder="Codigo" [(ngModel)]="product.B1_COD" name="B1_COD" disabled>
+                            <!-- <input matInput #input maxlength="15" placeholder="Codigo" name="B1_COD"> -->
                         </mat-form-field>
                         <mat-form-field hintLabel="Max 30 characters" appearance="outline" class="descricao">
-                            <!-- <input matInput maxlength="30" placeholder="Descrição" type="text" [(ngModel)]="product.B1_DESC" name="B1_DESC"> -->
-                            <input matInput maxlength="30" placeholder="Descrição" type="text" name="B1_DESC">
+                            <input matInput maxlength="30" placeholder="Descrição" type="text" [(ngModel)]="product.B1_DESC" name="B1_DESC">
+                            <!-- <input matInput maxlength="30" placeholder="Descrição" type="text" name="B1_DESC"> -->
                         </mat-form-field>
                     </div>
                     <br>
                     <div class="campos">
                         <mat-form-field hintLabel="Tipo" appearance="outline" class="Tipo">
                             <mat-label>Select</mat-label>
-                            <!-- <mat-select [(value)]="product.B1_TIPO"> -->
-                            <mat-select>
+                            <mat-select [(value)]="product.B1_TIPO">
+                            <!-- <mat-select> -->
                                 <mat-option value="AI">ATIVO IMOBILIZADO</mat-option>
                                 <mat-option value="BN">BENEFICIAMENTO</mat-option>
                                 <mat-option value="EM">EMBALAGEM</mat-option>
@@ -49,8 +49,8 @@
                         </mat-form-field>
                         <mat-form-field hintLabel="Unidade Medida" appearance="outline" class="Unidade">
                             <mat-label>Select</mat-label>
-                            <!-- <mat-select [(value)]="product.B1_UM"> -->
-                            <mat-select>
+                            <mat-select [(value)]="product.B1_UM">
+                            <!-- <mat-select> -->
                                 <mat-option value="AR">ARROBA</mat-option>
                                 <mat-option value="BD">BALDE</mat-option>
                                 <mat-option value="CC">CENTIMET</mat-option>
@@ -87,15 +87,15 @@
                         </mat-form-field>
                         <mat-form-field hintLabel="Armazem Padrao p/Requis" appearance="outline" class="Armazen">
                             <mat-label>Select</mat-label>
-                            <!-- <mat-select [(value)]="product.B1_LOCPAD"> -->
-                            <mat-select>
+                            <mat-select [(value)]="product.B1_LOCPAD">
+                            <!-- <mat-select> -->
                                 <mat-option value="01">ESTOQUE MAXIMO</mat-option>
                             </mat-select>
                         </mat-form-field>
                         <mat-form-field hintLabel="Garnatia" appearance="outline" class="Garantia">
                             <mat-label>Select</mat-label>
-                            <!-- <mat-select [(value)]="product.B1_GARANT"> -->
-                            <mat-select>
+                            <mat-select [(value)]="product.B1_GARANT">
+                            <!-- <mat-select> -->
                                 <mat-option value="1">SIM</mat-option>
                                 <mat-option value="2">NÃO</mat-option>
                             </mat-select>

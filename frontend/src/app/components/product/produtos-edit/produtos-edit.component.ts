@@ -10,20 +10,30 @@ import { ProductService } from '../products.service';
 })
 export class ProdutosEditComponent {
 
-  public product: Product[] = [];
+  public product: Product = {
+    B1_COD: "",
+    B1_DESC: "",
+    B1_GARANT: "",
+    B1_LOCPAD: "",
+    B1_TIPO: "",
+    B1_UM: ""
+  };
 
   constructor(private ProductService: ProductService, private router: Router, private route: ActivatedRoute) { }
 
-  ngOnInit(): void{
+  ngOnInit(): void {
     const B1_COD = this.route.snapshot.paramMap.get("B1_COD");
-    this.ProductService.readById('B1_COD').subscribe(P => {
-      this.product = P
-      console.log(P)
+    this.ProductService.read().subscribe(P => {
+      P.Produtos.map(produto => {
+        if(produto.B1_COD == B1_COD){
+          this.product = produto;
+        }
+      })
     });
   }
 
   update(): void {
-
+    console.log(this.product)
   }
 
   cancel(): void {

@@ -11,7 +11,7 @@ export class ProductService {
 
   baseUrlGet = "http://localhost:8081/rest/faturamento/cliente/tipo/visualizar";
   baseUrlPost = "http://localhost:8081/rest/faturamneto/produtos/create";
-  baseUrlPathc = "http://localhost:8081/rest/faturamneto/produtos/edit/:codigo"
+  baseUrlPathc = "http://localhost:8081/rest/faturamneto/produtos/edit/"
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
@@ -36,10 +36,8 @@ export class ProductService {
     return this.http.get<ProductContainer>(this.baseUrlGet)
   }
 
-  readById(B1_COD: string): Observable<Product[]> {
-    const url = `${this.baseUrlPathc}/${B1_COD}`;
-    return this.http.get<Product[]>(url).pipe(
-      map((obj) => obj),
-    );
-  }
+  // readById(B1_COD: string | null): Observable<ProductContainer>{
+  //   const url = 
+  //   return this.http.get<ProductContainer>(this.baseUrlGet)
+  // }
 }
