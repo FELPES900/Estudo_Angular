@@ -6,6 +6,7 @@ import { HomeComponent } from "./views/home/home.component"
 import { ProductsCrudsComponent } from "./views/products-cruds/products-cruds.component"
 import { ProductCreateComponent } from './components/product/product-create/product-create.component';
 import { ProdutosEditComponent } from './components/product/produtos-edit/produtos-edit.component';
+import { ProdutosViewComponent } from './components/product/produtos-view/produtos-view.component';
 
 const routes: Routes = [
   {
@@ -26,7 +27,7 @@ const routes: Routes = [
   },
   {
     path: "products/visualizar/:B1_COD",
-    component: ProdutosEditComponent
+    component: ProdutosViewComponent
   }
 ];
 

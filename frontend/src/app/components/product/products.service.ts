@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient } from "@angular/common/http";
 import { Product, ProductContainer } from './product.model';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,8 @@ import { Observable } from 'rxjs';
 export class ProductService {
 
   baseUrlGet = "http://localhost:8081/rest/faturamento/cliente/tipo/visualizar";
-  baseUrlPost = "http://localhost:8081/rest/faturamneto/produtos/create"
+  baseUrlPost = "http://localhost:8081/rest/faturamneto/produtos/create";
+  baseUrlPathc = "http://localhost:8081/rest/faturamneto/produtos/edit/:codigo"
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
@@ -33,5 +34,12 @@ export class ProductService {
   read(): Observable<ProductContainer> {
     // Ira retorna a lista de produtos
     return this.http.get<ProductContainer>(this.baseUrlGet)
+  }
+
+  readById(B1_COD: string): Observable<Product[]> {
+    const url = `${this.baseUrlPathc}/${B1_COD}`;
+    return this.http.get<Product[]>(url).pipe(
+      map((obj) => obj),
+    );
   }
 }

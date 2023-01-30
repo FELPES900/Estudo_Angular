@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Product } from '../product.model';
 import { ProductService } from '../products.service';
 
 @Component({
@@ -8,8 +9,22 @@ import { ProductService } from '../products.service';
   styleUrls: ['./produtos-edit.component.css']
 })
 export class ProdutosEditComponent {
-  
-  constructor(private ProductService: ProductService, private router: Router) { }
+
+  public product: Product[] = [];
+
+  constructor(private ProductService: ProductService, private router: Router, private route: ActivatedRoute) { }
+
+  ngOnInit(): void{
+    const B1_COD = this.route.snapshot.paramMap.get("B1_COD");
+    this.ProductService.readById('B1_COD').subscribe(P => {
+      this.product = P
+      console.log(P)
+    });
+  }
+
+  update(): void {
+
+  }
 
   cancel(): void {
     this.router.navigate(['/products'])
