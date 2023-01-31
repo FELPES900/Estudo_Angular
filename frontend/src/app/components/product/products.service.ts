@@ -43,20 +43,13 @@ export class ProductService {
     return this.http.get<ProductContainer>(this.baseUrlGet)
   }
 
-  delet(product: Product): boolean {
-    // type NewType = Product
-
-    try {
-      this.http.delete(this.baseUrlDelete, {
-        body: { "B1_COD": product.B1_COD }
-      })
-      return true;
-    } catch (error) {
-      return false;
-    }
-
-
-
+  async delet(product: String): Promise<boolean> {
+    let teste = false;
+    await this.http.delete(this.baseUrlDelete, { body: { "B1_COD": product } }).toPromise().then(produto => {
+      console.log(produto)
+      teste = true;
+    });
+    return teste;
   }
 
 }

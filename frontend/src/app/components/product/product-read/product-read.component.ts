@@ -11,28 +11,23 @@ import { Router } from '@angular/router';
 
 export class ProductReadComponent {
 
-    // Variavel que recebera os dados do json do backend
+  // Variavel que recebera os dados do json do backend
   public products: Product[] = [];
 
-  constructor(private productService: ProductService, private router: Router) {}
+  constructor(private productService: ProductService, private router: Router) { }
 
-  ngOnInit(): void{
-    this.productService.read().subscribe(P => {
-      this.products = P.Produtos
-      console.log(P)
-    })
-  }
-  
-  async deletar(product: Product): Promise<void>{
-    const result =  this.productService.delet(product)
-
-    if(result){
-      console.log("exclui")
-    }
-    console.log(product)
-    // this.productService.delet(this.product).subscribe(() => {
-      // this.productService.showMenssagem("Produto criado com sucesso")
-      // this.router.navigate(['/products'])
+  ngOnInit(): void {
+    this.buscarProdutos()
   }
 
+  async deletar(product: String): Promise<void> {
+    await this.productService.delet(product);
+    this.productService.showMenssagem("Product deletado");
+    await this.buscarProdutos();
+    window.location.reload();
+  }
+  async buscarProdutos(): Promise<void> {
+    this.products = await this.productService.read().toPromise().then(response => response?.Produtos) || [];
+    console.log(this.products);
+  }
 }
