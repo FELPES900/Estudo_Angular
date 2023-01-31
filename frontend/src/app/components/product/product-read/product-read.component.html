@@ -19,17 +19,17 @@
                 <td>{{product.B1_LOCPAD}}</td>
                 <td>{{product.B1_GARANT}}</td>
                                 <td>
-                    <button routerLink="visualizar/{{product.B1_COD}}" mat-mini-fab class="olho" aria-label="Example icon button with a delete icon">
+                    <button routerLink="visualizar/{{product.B1_COD}}" mat-mini-fab class="olho" aria-label="Example icon button with a visibility icon">
                         <mat-icon>visibility</mat-icon>
                     </button>
                 </td>
                 <td>
-                    <button routerLink="edit/{{product.B1_COD}}" mat-mini-fab color="primary" aria-label="Example icon button with a delete icon">
+                    <button routerLink="edit/{{product.B1_COD}}" mat-mini-fab color="primary" aria-label="Example icon button with a edit icon">
                         <mat-icon>edit</mat-icon>
                     </button>
                 </td>
                 <td>
-                    <button mat-mini-fab color="warn" aria-label="Example icon button with a delete icon">
+                    <button (click)="deletar(product)" mat-mini-fab color="warn" aria-label="Example icon button with a delete icon">
                         <mat-icon>delete</mat-icon>
                     </button>
                 </td>
