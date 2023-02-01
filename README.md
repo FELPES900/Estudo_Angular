@@ -1,6 +1,6 @@
 # Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.2.
 
 ## Development server
 
@@ -13,6 +13,10 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## To run on TOTVS Protheus
+
+See the documentation: `https://tdn.totvs.com/display/public/framework/FwCallApp+-+Abrindo+aplicativos+Web+no+Protheus`
 
 ## Running unit tests
 
