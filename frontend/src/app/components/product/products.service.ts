@@ -9,10 +9,10 @@ import { map, Observable } from 'rxjs';
 })
 export class ProductService {
 
-  baseUrlGet = "http://192.168.199.3:8081/rest/faturamento/cliente/tipo/visualizar";
-  baseUrlPost = "http://192.168.199.3:8081/rest/faturamneto/produtos/create";
-  baseUrlPathc = "http://192.168.199.3:8081/rest/faturamneto/produtos/edit"
-  baseUrlDelete = "http://192.168.199.3:8081/rest/faturamento/produtos/delete"
+  baseUrlGet = "http://localhost:8081/rest/faturamento/cliente/tipo/visualizar";
+  baseUrlPost = "http://localhost:8081/rest/faturamneto/produtos/create";
+  baseUrlPathc = "http://localhost:8081/rest/faturamneto/produtos/edit"
+  baseUrlDelete = "http://localhost:8081/rest/faturamento/produtos/delete"
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
