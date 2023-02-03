@@ -25,7 +25,7 @@ export class ProductReadComponent {
     this.productService.showMenssagem("Product deletado");
     await this.buscarProdutos();
     let index = this.products.findIndex(p => p.B1_COD === product);
-    this.products.splice(index,1)
+    this.products.slice(index,0)
   }
   async buscarProdutos(): Promise<void> {
     this.products = await this.productService.read().toPromise().then(response => response?.Produtos) || [];
